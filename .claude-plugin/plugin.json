@@ -1,0 +1,8 @@
+{
+  "name": "vague",
+  "version": "0.1.0",
+  "description": "The Vague colorscheme for the Claude desktop and mobile apps: dark, low contrast, pastel",
+  "author": { "name": "Geisson Ponce" },
+  "homepage": "https://github.com/Geisson19/claude-vague",
+  "license": "MIT"
+}

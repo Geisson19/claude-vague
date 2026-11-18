@@ -1,0 +1,6 @@
+{
+  "name": "claude-vague",
+  "owner": { "name": "Geisson Ponce" },
+  "description": "Vague, the dark low-contrast colorscheme, as a theme for the Claude desktop and mobile apps",
+  "plugins": [{ "name": "vague", "source": "./" }]
+}
