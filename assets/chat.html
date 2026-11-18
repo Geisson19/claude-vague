@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vague chat illustration</title>
+<style>
+  :root {
+    --bg: #141415;
+    --card: #1c1c24;
+    --line: #252530;
+    --fg: #cdcdcd;
+    --secondary: #aeaed1;
+    --muted: #909099;
+    --keyword: #6e94b2;
+    --string: #7fa563;
+    --literal: #bb9dbd;
+    --name: #d8647e;
+    --variable: #f3be7c;
+    --added: #7fa563;
+    --removed: #d8647e;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1280px; height: 680px; background: var(--bg); }
+  body { display: grid; place-items: center; font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; color: var(--fg); }
+  .window { width: 1040px; height: 600px; display: grid; grid-template-rows: auto 1fr auto; background: var(--bg); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .bar { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--line); background: var(--card); }
+  .dots { display: flex; gap: 8px; }
+  .dots i { width: 12px; height: 12px; border-radius: 50%; background: var(--line); }
+  .title { font-size: 13px; color: var(--muted); }
+  .thread { padding: 28px 64px; display: grid; gap: 18px; align-content: start; }
+  .you { justify-self: end; max-width: 70%; padding: 10px 16px; background: var(--line); border-radius: 14px; }
+  .reply { color: var(--fg); }
+  .reply code { font: 14px "SF Mono", ui-monospace, Menlo, monospace; color: var(--secondary); background: var(--card); padding: 1px 6px; border-radius: 6px; }
+  .tool { border: 1px solid var(--line); border-radius: 12px; background: var(--card); overflow: hidden; }
+  .tool-head { display: flex; justify-content: space-between; padding: 10px 16px; font-size: 14px; }
+  .tool-head b { font-weight: 600; }
+  .tool-head span { color: var(--muted); font: 13px "SF Mono", ui-monospace, Menlo, monospace; }
+  .tool-head .plus, .tool-head .ok { color: var(--added); }
+  .tool-head .minus { color: var(--removed); }
+  .diff { font: 14px/1.7 "SF Mono", ui-monospace, Menlo, monospace; border-top: 1px solid var(--line); }
+  .diff div { padding: 0 16px; }
+  .diff .add { background: color-mix(in srgb, var(--added) 16%, transparent); }
+  .diff .del { background: color-mix(in srgb, var(--removed) 16%, transparent); }
+  .k { color: var(--keyword); } .s { color: var(--string); } .l { color: var(--literal); } .n { color: var(--name); } .v { color: var(--variable); }
+  .prompt { margin: 0 64px 24px; padding: 14px 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); color: var(--muted); display: flex; justify-content: space-between; }
+  .prompt span:last-child { font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="window">
+  <div class="bar"><div class="dots"><i></i><i></i><i></i></div><span class="title">Debounce the draft autosave</span></div>
+  <div class="thread">
+    <div class="you">Autosave fires on every keystroke. Debounce it to 500 ms and make sure the tests pass.</div>
+    <p class="reply">I added a small <code>debounce</code> helper and wrapped the autosave in it, so only the last keystroke in a pause saves the draft.</p>
+    <div class="tool">
+      <div class="tool-head"><b>Edit src/editor/autosave.ts</b><span><span class="plus">+2</span> <span class="minus">−1</span></span></div>
+      <div class="diff">
+        <div class="del">-  <span class="k">const</span> <span class="v">save</span> = () =&gt; <span class="n">persist</span>(<span class="s">'draft'</span>)</div>
+        <div class="add">+  <span class="k">import</span> { <span class="n">debounce</span> } <span class="k">from</span> <span class="s">'../debounce'</span></div>
+        <div class="add">+  <span class="k">const</span> <span class="v">save</span> = <span class="n">debounce</span>(() =&gt; <span class="n">persist</span>(<span class="s">'draft'</span>), <span class="l">500</span>)</div>
+      </div>
+    </div>
+    <div class="tool">
+      <div class="tool-head"><b>Bash pnpm test</b><span class="ok">✓ 24 passed</span></div>
+    </div>
+    <p class="reply">All 24 tests pass, including a new one that types five keys in 100 ms and checks the draft saves once.</p>
+  </div>
+  <div class="prompt"><span>Reply…</span><span>Vague</span></div>
+</div>
+</body>
+</html>

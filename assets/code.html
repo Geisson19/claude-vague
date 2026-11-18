@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vague code colors</title>
+<style>
+  :root {
+    --bg: #141415;
+    --card: #1c1c24;
+    --line: #252530;
+    --fg: #cdcdcd;
+    --secondary: #aeaed1;
+    --muted: #909099;
+    --keyword: #6e94b2;
+    --string: #7fa563;
+    --literal: #bb9dbd;
+    --name: #d8647e;
+    --variable: #f3be7c;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1280px; height: 640px; background: var(--bg); }
+  body { display: grid; place-items: center; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; }
+  .window { width: 1040px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .bar { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--line); }
+  .dots { display: flex; gap: 8px; }
+  .dots i { width: 12px; height: 12px; border-radius: 50%; background: var(--line); }
+  .file { font: 13px "SF Mono", ui-monospace, Menlo, monospace; color: var(--muted); }
+  pre { padding: 28px 32px 32px; font: 18px/1.7 "SF Mono", ui-monospace, Menlo, monospace; color: var(--fg); }
+  .n-line { display: inline-block; width: 2.2em; color: var(--line); filter: brightness(1.9); user-select: none; }
+  .k { color: var(--keyword); }
+  .s { color: var(--string); }
+  .l { color: var(--literal); }
+  .n { color: var(--name); }
+  .v { color: var(--variable); }
+  .t { color: var(--secondary); }
+  .c { color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+<div class="window">
+  <div class="bar"><div class="dots"><i></i><i></i><i></i></div><span class="file">src/debounce.ts</span></div>
+<pre><span class="n-line">1</span><span class="c">// Runs fn once the calls stop for ms milliseconds</span>
+<span class="n-line">2</span><span class="k">export function</span> <span class="n">debounce</span>&lt;<span class="t">T</span> <span class="k">extends</span> <span class="t">unknown</span>[]&gt;(<span class="v">fn</span>: (...<span class="v">args</span>: <span class="t">T</span>) =&gt; <span class="t">void</span>, <span class="v">ms</span> = <span class="l">200</span>) {
+<span class="n-line">3</span>  <span class="k">let</span> <span class="v">timer</span>: <span class="t">ReturnType</span>&lt;<span class="k">typeof</span> <span class="n">setTimeout</span>&gt; | <span class="l">undefined</span>
+<span class="n-line">4</span>
+<span class="n-line">5</span>  <span class="k">return</span> (...<span class="v">args</span>: <span class="t">T</span>) =&gt; {
+<span class="n-line">6</span>    <span class="n">clearTimeout</span>(<span class="v">timer</span>)
+<span class="n-line">7</span>    <span class="v">timer</span> = <span class="n">setTimeout</span>(() =&gt; <span class="v">fn</span>(...<span class="v">args</span>), <span class="v">ms</span>)
+<span class="n-line">8</span>  }
+<span class="n-line">9</span>}
+<span class="n-line">10</span>
+<span class="n-line">11</span><span class="k">const</span> <span class="v">save</span> = <span class="n">debounce</span>(() =&gt; <span class="n">persist</span>(<span class="s">'draft'</span>), <span class="l">500</span>)</pre>
+</div>
+</body>
+</html>
