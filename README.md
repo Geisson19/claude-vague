@@ -58,4 +58,4 @@ Claude Code 2.1.324 or later in the desktop app's Code tab.
 
 ## License
 
-MIT. The palette is Alberto Hernandez's, from vague.nvim, under its MIT license; both notices are in [LICENSE](LICENSE). `hooks/make-colors.js` is the color helper Anthropic's mod tooling ships for themes, included unchanged. The images are drawn from the HTML files beside them in `assets/`; re-render each with headless Chrome at a device scale of 2 and its page size (banner 1280×480, code 1280×640, chat 1280×680).
+MIT. The palette is Alberto Hernandez's, from vague.nvim, under its MIT license; both notices are in [LICENSE](LICENSE). `hooks/make-colors.js` is the color helper Anthropic's mod tooling ships for themes, included unchanged. The images are drawn from the HTML files beside them in `assets/`; re-render each with headless Chrome at a device scale of 2 and its page size (banner 1280×480, code 1280×640, chat 1280×680, and icon 512×512 into `.claude-plugin/icon.png`).

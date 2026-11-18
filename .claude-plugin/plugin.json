@@ -1,8 +1,12 @@
 {
   "name": "vague",
-  "version": "0.1.0",
-  "description": "The Vague colorscheme for the Claude desktop and mobile apps: dark, low contrast, pastel",
-  "author": { "name": "Geisson Ponce" },
+  "version": "0.2.0",
+  "description": "Vague, the dark and low-contrast Neovim colorscheme, for the Claude desktop and mobile apps: soft grays and muted pastels. Dark mode only. It changes colors and nothing else: no files, commands or network.",
+  "author": { "name": "Geisson Ponce", "url": "https://github.com/Geisson19" },
   "homepage": "https://github.com/Geisson19/claude-vague",
+  "repository": "https://github.com/Geisson19/claude-vague",
+  "supportUrl": "https://github.com/Geisson19/claude-vague/issues",
+  "keywords": ["theme", "colorscheme", "vague", "dark", "low-contrast", "claude-code-mod"],
+  "icon": "./.claude-plugin/icon.png",
   "license": "MIT"
 }
