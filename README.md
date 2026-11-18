@@ -1,3 +1,5 @@
+![Vague for Claude: nine swatches of the Vague palette above the title](assets/banner.png)
+
 # Vague for Claude
 
 A port of [vague.nvim](https://github.com/vague-theme/vague.nvim) by Alberto Hernandez to the Claude desktop and mobile apps: a cool, dark, low-contrast palette of soft grays and muted pastels.
@@ -50,4 +52,4 @@ Claude Code 2.1.324 or later in the desktop app's Code tab.
 
 ## License
 
-MIT. The palette is Alberto Hernandez's, from vague.nvim, under its MIT license; both notices are in [LICENSE](LICENSE). `hooks/make-colors.js` is the color helper Anthropic's mod tooling ships for themes, included unchanged.
+MIT. The palette is Alberto Hernandez's, from vague.nvim, under its MIT license; both notices are in [LICENSE](LICENSE). `hooks/make-colors.js` is the color helper Anthropic's mod tooling ships for themes, included unchanged. The banner is drawn from `assets/banner.html`; re-render it with headless Chrome at a device scale of 2 and a 1280×480 window.
