@@ -2,7 +2,7 @@
 
 # Vague for Claude
 
-A port of [vague.nvim](https://github.com/vague-theme/vague.nvim) by Alberto Hernandez to the Claude desktop and mobile apps: a cool, dark, low-contrast palette of soft grays and muted pastels.
+A port of [vague.nvim](https://github.com/vague-theme/vague.nvim) by Alberto Hernandez to the Claude desktop and mobile apps: a cool, low-contrast palette of soft grays and muted pastels, in dark and light.
 
 It is a Claude Code mod with one hook. When a session starts, it sets the app's colors with `$.theme.set`. It reads no files, runs no programs and makes no network calls.
 
@@ -33,24 +33,27 @@ Answer `y` to add the marketplace, then pick a scope (user installs it for every
 ## What to expect
 
 - **Desktop and mobile apps only.** The terminal and editor extensions draw no theme.
-- **Dark only.** Vague has no light variant, so the app switches to dark mode while the theme is set.
+- **Dark and light.** The theme follows the app's appearance. vague.nvim has no light variant, so the light half is this port's own: cool gray paper tinted toward Vague's blue-violet, with each of Vague's pastels deepened along its own hue until it reads on a light page.
 - **One theme at a time.** Another theme mod, such as `/custom-theme` from `theme-examples`, replaces this one.
-- **One change from the original.** Muted text is `#909099` instead of Vague's `#878787`, so it reaches the 4.5:1 contrast the app asks of small text; `#878787` still marks draft pull requests. Every other color is Vague's own.
+- **One change from the original in dark mode.** Muted text is `#909099` instead of Vague's `#878787`, so it reaches the 4.5:1 contrast the app asks of small text; `#878787` still marks draft pull requests. Every other dark color is Vague's own.
 
 ## Palette
 
-| Role | Color | From Vague |
-| --- | --- | --- |
-| Page | `#141415` | `bg` |
-| Cards | `#1c1c24` | `inactiveBg` |
-| Panels | `#252530` | `line` |
-| Text | `#cdcdcd` | `fg` |
-| Secondary text | `#aeaed1` | `constant` |
-| Accent | `#6e94b2` | `keyword` |
-| Danger | `#d8647e` | `error` |
-| Success | `#7fa563` | `plus` |
-| Warning | `#f3be7c` | `warning` |
-| Highlight | `#bb9dbd` | `parameter` |
+| Role | Dark | Light | From Vague |
+| --- | --- | --- | --- |
+| Page | `#141415` | `#e4e4ea` | `bg` |
+| Cards | `#1c1c24` | `#ebebf0` | `inactiveBg` |
+| Panels | `#252530` | `#f2f2f6` | `line` |
+| Text | `#cdcdcd` | `#252530` | `fg` |
+| Secondary text | `#aeaed1` | `#4f4f78` | `constant` |
+| Muted text | `#909099` | `#5c5c6b` | `floatBorder`, lightened (see above) |
+| Accent | `#6e94b2` | `#3f6a8c` | `keyword` |
+| Danger | `#d8647e` | `#a03a54` | `error` |
+| Success | `#7fa563` | `#4e7535` | `plus` |
+| Warning | `#f3be7c` | `#8f6420` | `warning` |
+| Highlight | `#bb9dbd` | `#7e5a81` | `parameter` |
+
+The light column is not from vague.nvim; each color is the dark one's hue, darkened for a light page.
 
 ## Requirements
 
