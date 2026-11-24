@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vague for Claude: social preview</title>
+<style>
+  /* GitHub social preview: 1280x640, important content kept 80px from every edge. */
+  :root {
+    --bg: #141415;
+    --card: #1c1c24;
+    --line: #252530;
+    --fg: #cdcdcd;
+    --secondary: #aeaed1;
+    --muted: #909099;
+    --light-page: #e4e4ea;
+    --light-card: #ebebf0;
+    --light-fg: #252530;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1280px; height: 640px; background: var(--bg); overflow: hidden; }
+  body {
+    padding: 80px;
+    display: grid;
+    place-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+    color: var(--fg);
+  }
+  main { display: grid; justify-items: center; gap: 30px; }
+  .swatches {
+    display: flex;
+    gap: 10px;
+    padding: 14px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+  }
+  .swatch { display: grid; justify-items: center; gap: 8px; }
+  .chip { width: 64px; height: 40px; border-radius: 10px; }
+  .hex {
+    font-family: "SF Mono", ui-monospace, Menlo, monospace;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+  }
+  h1 { font-size: 64px; font-weight: 600; letter-spacing: -0.02em; }
+  p { font-size: 22px; color: var(--secondary); }
+  .modes { display: flex; gap: 12px; }
+  .mode {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .mode i { width: 12px; height: 12px; border-radius: 50%; }
+  .dark { background: var(--card); border: 1px solid var(--line); color: var(--fg); }
+  .dark i { background: #6e94b2; }
+  .light { background: var(--light-card); color: var(--light-fg); }
+  .light i { background: #3f6a8c; }
+</style>
+</head>
+<body>
+<main>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#6e94b2"></div><span class="hex">#6e94b2</span></div>
+    <div class="swatch"><div class="chip" style="background:#7e98e8"></div><span class="hex">#7e98e8</span></div>
+    <div class="swatch"><div class="chip" style="background:#b4d4cf"></div><span class="hex">#b4d4cf</span></div>
+    <div class="swatch"><div class="chip" style="background:#7fa563"></div><span class="hex">#7fa563</span></div>
+    <div class="swatch"><div class="chip" style="background:#f3be7c"></div><span class="hex">#f3be7c</span></div>
+    <div class="swatch"><div class="chip" style="background:#e0a363"></div><span class="hex">#e0a363</span></div>
+    <div class="swatch"><div class="chip" style="background:#d8647e"></div><span class="hex">#d8647e</span></div>
+    <div class="swatch"><div class="chip" style="background:#c48282"></div><span class="hex">#c48282</span></div>
+    <div class="swatch"><div class="chip" style="background:#bb9dbd"></div><span class="hex">#bb9dbd</span></div>
+  </div>
+  <h1>Vague for Claude</h1>
+  <p>The low-contrast vague.nvim palette, in the Claude desktop and mobile apps</p>
+  <div class="modes">
+    <span class="mode dark"><i></i>Dark</span>
+    <span class="mode light"><i></i>Light</span>
+  </div>
+</main>
+</body>
+</html>
