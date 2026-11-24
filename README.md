@@ -40,6 +40,7 @@ Answer `y` to add the marketplace, then pick a scope (user installs it for every
 
 - **Desktop and mobile apps only.** The terminal and editor extensions draw no theme.
 - **Dark and light.** The theme follows the app's appearance. vague.nvim has no light variant, so the light half is this port's own: cool gray paper tinted toward Vague's blue-violet, with each of Vague's pastels deepened along its own hue until it reads on a light page.
+- **Light code blocks keep the app's background.** The theme colors the code itself in Vague's hues, but in light mode the app draws code blocks on its own warm off-white, which a theme can't change. In dark mode they sit close to Vague's page.
 - **One theme at a time.** Another theme mod, such as `/custom-theme` from `theme-examples`, replaces this one.
 - **One change from the original in dark mode.** Muted text is `#909099` instead of Vague's `#878787`, so it reaches the 4.5:1 contrast the app asks of small text; `#878787` still marks draft pull requests. Every other dark color is Vague's own.
 
