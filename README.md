@@ -6,6 +6,12 @@ A port of [vague.nvim](https://github.com/vague-theme/vague.nvim) by Alberto Her
 
 It is a Claude Code mod with one hook. When a session starts, it sets the app's colors with `$.theme.set`. It reads no files, runs no programs and makes no network calls.
 
+![Screenshot: the Claude desktop app in Vague dark, showing a finished task and its summary](assets/app-dark.png)
+
+![Screenshot: the same task in Vague light](assets/app-light.png)
+
+*Screenshots of the Claude desktop app with this theme, in dark and light.*
+
 ![Illustration: a conversation in the Vague colors, with an edit's diff and a passing test run](assets/chat.png)
 
 ![Illustration: TypeScript in the Vague code colors](assets/code.png)
@@ -61,4 +67,4 @@ Claude Code 2.1.324 or later in the desktop app's Code tab.
 
 ## License
 
-MIT. The palette is Alberto Hernandez's, from vague.nvim, under its MIT license; both notices are in [LICENSE](LICENSE). `hooks/make-colors.js` is the color helper Anthropic's mod tooling ships for themes, included unchanged. The images are drawn from the HTML files beside them in `assets/`; re-render each with headless Chrome at a device scale of 2 and its page size (banner 1280×480, code 1280×640, chat 1280×680, and icon 512×512 into `.claude-plugin/icon.png`). The exception is `social.png`, GitHub's social preview, which is rendered at a device scale of 1 to GitHub's 1280×640, with its content kept 80 px from every edge.
+MIT. The palette is Alberto Hernandez's, from vague.nvim, under its MIT license; both notices are in [LICENSE](LICENSE). `hooks/make-colors.js` is the color helper Anthropic's mod tooling ships for themes, included unchanged. The `app-*.png` screenshots are captures of the app. The other images are drawn from the HTML files beside them in `assets/`; re-render each with headless Chrome at a device scale of 2 and its page size (banner 1280×480, code 1280×640, chat 1280×680, and icon 512×512 into `.claude-plugin/icon.png`). The exception is `social.png`, GitHub's social preview, which is rendered at a device scale of 1 to GitHub's 1280×640, with its content kept 80 px from every edge.
